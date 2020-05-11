@@ -15,7 +15,7 @@ module.exports = axios.get((`${process.env.HOST}/articles`))
         title: data.title,
         content: converter.makeHtml(data.content),
         summary: htmlToText.fromString(converter.makeHtml(data.content)).substring(0, 100),
-        img: process.env.HOST + data.image.url,
+        img: data.image.url,
         slug: data.slug,
         categories: data.categories,
         imgName: data.image.name,
@@ -38,7 +38,7 @@ function created(time) {
   
     var d = new Date(time);
     var date = `${d.getUTCDate()}/${d.getUTCMonth()}/${d.getUTCFullYear()} at ${d.getUTCHours()}:${d.getUTCMinutes()}`
-    console.log(date);
+    // console.log(date);
     return date;
 }
 
