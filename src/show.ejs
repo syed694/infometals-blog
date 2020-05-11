@@ -1,0 +1,64 @@
+---
+title: INFOMETALS
+layout: base.ejs
+pagination:
+ data: articles
+ size: 1
+ alias: article
+permalink: /show/<%=article.slug%>/index.html
+---
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4"><%=article.title%></h1>
+
+        <!-- Author -->
+        <p class="lead">
+          by
+          <a href="https://instagram.com/khaleel6339?igshid=dji66cqlo6qs" target="_blank">Syed Khaleel</a>
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p><%=article.created%></p>
+
+        <hr>
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="<%=article.img%>" alt="<%=article.imgName%>">
+
+        <hr>
+
+        <!-- Post Content -->
+        <article><%-article.content%></article>
+
+        <hr>
+
+      </div>
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <script>
+
+    const image = document.querySelectorAll("p img");
+  
+    image.forEach(img => {
+      img.parentElement.style.textAlign = "center"
+    })
+
+  
+  </script>
+  
